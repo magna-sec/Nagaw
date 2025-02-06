@@ -1,6 +1,5 @@
 import time
 import logging
-from macmatcher import MACMatcher
 
 class Victim(object):
     """Represents a victim connected to the AP."""
@@ -32,12 +31,11 @@ class VictimManager():
         else:
             VictimManager.__instance = self
             self.victims_dic = {}
-            self.mac2vendor = MACMatcher(mac_to_vendor_path_file)
             self.url2os = open(url_to_os_path_file, "r")
 
     def add(self, mac, ip):
         new_victim = Victim(mac, ip)
-        new_victim.vendor = self.mac2vendor.get_vendor_name(mac)
+        new_victim.vendor = str(mac)
         self.victims_dic[mac] = new_victim
 
     def update_os(self, ip, url):

@@ -226,8 +226,8 @@ if __name__ == "__main__":
 
     # Check root invokation
     if os.geteuid():
-        print '[-] Non root user detected.'
-        print '[!] Please run again as root.'
+        print('[-] Non root user detected.')
+        print('[!] Please run again as root.')
         sys.exit(-1)
 
     # Logs configuration

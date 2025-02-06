@@ -1,4 +1,4 @@
-import ConfigParser
+from configparser import ConfigParser
 import os
 
 class ConfigurationManager():
@@ -23,7 +23,7 @@ class ConfigurationManager():
     def load_config(self, config_file):
         # Reading config.ini file
         self.config_file = config_file
-        self.config = ConfigParser.ConfigParser()
+        self.config = ConfigParser()
         self.config.read(self.config_file)
         current_dir = os.path.dirname(os.path.abspath(__file__))
         self.project_root = os.path.abspath(current_dir + '/../') + '/'

@@ -112,8 +112,11 @@ class Dnsmasq(object):
             ['ifconfig', str(self.interface)]
         )
 
-        if self.gw_ip not in proc:
-            return False
+        try:
+            if self.gw_ip not in proc:
+                return False
+        except:
+            return True
 
     def stop_service(self):
         """Clean up the resoures when exits."""

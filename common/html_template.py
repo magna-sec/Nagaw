@@ -1,5 +1,5 @@
 import os
-import ConfigParser
+from configparser import ConfigParser
 import logging
 from shutil import copyfile
 
@@ -14,7 +14,7 @@ class FormTemplate():
 
     def __init__(self, name, template_dir_path, html_dir, static_dir, config_file):
         # Read the template's configuration file
-        config = ConfigParser.ConfigParser()
+        config = ConfigParser()
         config_file_path = os.path.join(template_dir_path, config_file)
         config.read(config_file_path)
 
@@ -38,7 +38,6 @@ class TemplateManager():
         self.config_file = 'config.ini'
         self.template_root = template_root
         template_list = os.listdir(self.template_root)
-
         # Load templates
         self.templates = {}
         for template_name in template_list:
