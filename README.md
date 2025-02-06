@@ -3,6 +3,18 @@ Nagaw is a simple yet effective captive portal tool coded in Python.
 
 The code was taken from Wifiphisher tool (all credits go to the original authors) and modified and adapted to be used separately.
 
+## "New" ReadMe
+This code was ~stolen~ forked from after reading https://hacktricks.boitatech.com.br/pentesting/pentesting-network/wifi-attacks/evil-twin-eap-tls#the-uncommon-case-attacking-eap-tls
+
+This should do 80% of what the previous tool did... was a lot of errors. 
+```bash
+# Run:
+python3 -m venv venv &&  . venv/bin/activate && python3 -m pip install -r requirements.txt
+sudo python3 nagaw.py -i wlan1 -o wlan0 -t demo
+```
+
+## Old ReadMe
+
 # Example of Use:
 ```
 bransh@hsnarb:~/DEV/nagaw$ sudo python nagaw.py -i wlan1 -o wlan0 -t demo -d
